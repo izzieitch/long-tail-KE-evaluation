@@ -2,7 +2,7 @@ import os
 import json
 from difflib import SequenceMatcher
 
-# ---------- configuration ----------
+# ---------- top level ----------
 TOKENIZED_FOLDER = "tokenizedSentences"
 OUTPUT_BASE_FOLDER = "opium_sentences_complete"
 
