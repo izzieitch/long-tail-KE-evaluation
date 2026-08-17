@@ -1,6 +1,6 @@
-# Flair KE Experiments
+# FLAIR KE Evaluations
 
-A knowledge extraction pipeline for historical travelogue texts about opium trade in 19th century China, performing NER, entity linking, and relation extraction using Flair and spaCy. Part of the pilot study for project SevenFrontiers.
+A knowledge extraction pipeline for historical travelogue texts about opium trade in 19th century China, performing NER and entity linking using FLAIR. The results are sampled, manually evaluated, and analysed according to the head / tail grouping of the entities.
 
 ## Setup
 
@@ -44,7 +44,7 @@ Run scripts in order:
 | `pipeline/05_flair_ner.py` | `opium_sentences_complete/` | `results/flair_ner_results.json` | Named entity recognition with Flair |
 | `pipeline/06_inject_manual.py` | `results/flair_ner_results.json`, `opium_sentences_complete/` | `results/flair_ner_with_manual.json` | Injects manual string matches as additional entities |
 | `pipeline/07_entity_linking.py` | `results/flair_ner_with_manual.json` | `results/flair_ner_with_manual_linked.json` | Links entities to Wikipedia using Flair's entity linker |
-| `pipeline/08_relation_extraction.py` | `results/flair_ner_with_manual.json` | `results/hybrid_spacy_on_flair.json` | Extracts subject–relation–object triples using spaCy |
+
 
 ## Analysis
 
@@ -54,8 +54,7 @@ Run from the repository root after the relevant pipeline steps are complete:
 |--------|-------|-------------|
 | `analysis/ner_counts.py` | `results/flair_ner_results.json` | Entity label distribution |
 | `analysis/el_counts.py` | `results/flair_ner_with_manual_linked.json` | Entity linking coverage and top linked entities |
-| `analysis/re_counts.py` | `results/hybrid_spacy_on_flair.json` | Relation type counts, saves `results/verb_relation_summary.json` |
-| `analysis/re_visual.py` | `results/hybrid_spacy_on_flair.json` | Bar charts of relation distributions |
+
 
 ## Repository structure
 
