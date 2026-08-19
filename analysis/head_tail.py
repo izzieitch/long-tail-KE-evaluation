@@ -1,19 +1,3 @@
-"""
-NER head/tail (80/20 Pareto) analysis.
-
-Given Flair-style NER results (list of sentence records, each with an
-"entities" list of {text, label, start_pos, end_pos, score}), this script:
-
-1. Builds a per-unique-entity frequency table.
-2. Computes the cumulative-mass 80/20 head/tail split.
-3. Plots a Pareto chart (entity rank vs frequency + cumulative %).
-4. Plots entity-type composition within head vs. tail.
-5. Prints a summary table.
-
-Usage:
-    python ner_head_tail_analysis.py --input results/flair_ner_results.json
-"""
-
 import argparse
 import json
 import re

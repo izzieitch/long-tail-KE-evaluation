@@ -50,3 +50,8 @@ tokenizedSentences/
 # -------------------------
 *.swp
 *.swo
+
+# -------------------------
+# Sampling key
+# -------------------------
+analysis/sampling.py
