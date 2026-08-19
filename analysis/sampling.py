@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
  
 NER_RESULTS_FILE = "results/flair_ner_results.json"
-OUTDIR = Path("evaluation_output")
+OUTDIR = Path("sampling_output")
  
 MIN_FREQ_HEAD = 1          # entities with freq > this are "head"
 N_SHARED_HEAD = 25

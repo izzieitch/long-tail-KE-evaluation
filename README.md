@@ -7,7 +7,7 @@ A knowledge extraction pipeline for historical travelogue texts about opium trad
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install flair spacy pyinflect nltk matplotlib
+pip install flair spacy pyinflect nltk matplotlib pandas
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_lg
 ```
@@ -50,20 +50,27 @@ Run scripts in order:
 
 Run from the repository root after the relevant pipeline steps are complete:
 
-| Script | Input | Description |
+| Script | Input | Output |
 |--------|-------|-------------|
 | `analysis/ner_counts.py` | `results/flair_ner_results.json` | Entity label distribution |
 | `analysis/el_counts.py` | `results/flair_ner_with_manual_linked.json` | Entity linking coverage and top linked entities |
+| `head_tail.py` | `results/flair_ner_results.json` | `head-tail_analysis_output` |
+| `el_counts.py` | `results/flair_ner_with_manual_linked.json` | Entity linking sucess rate grouped by head/tail |
+| `sampling.py` | `results/flair_ner_results.json` | `sampling_output/evaluation_samples.xlsx` sampling strategy for manually evaluation and creates the first batch of evaluated samples  |
+| `commodities_counts.py` | `tokenizedSentences` | Counts of other commodity target tokens |
 
 
 ## Repository structure
 
 ```
-pipeline/       pipeline scripts (00–08)
-analysis/       analysis and visualisation scripts
-vocab/          generated vocabulary files
-results/        pipeline outputs
-corpus-info.xlsx  corpus metadata
+pipeline/                 pipeline scripts (00–08)
+analysis/                 analysis and visualisation scripts
+vocab/                    generated vocabulary files
+results/                  pipeline outputs
+head-tail_analysis_output grouping of NER results into head and tail based on entity frequency, including entity frequency tabel and visualisations
+sampling_output           first batch of samples for manual evaluation
+ner_eval_results_analysis contains the results of manual evaluation of ner sampled by head and tail, `ner_eval_results_14aug.xlsx`, visualisation scrpts and visualisation results
+corpus-info.xlsx          corpus metadata
 ```
 
 ## AI statement

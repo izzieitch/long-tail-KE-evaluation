@@ -238,7 +238,7 @@ def main():
         "--input", type=str, default=NER_RESULTS_FILE,
         help=f"Path to NER results JSON (default: {NER_RESULTS_FILE})"
     )
-    parser.add_argument("--outdir", type=str, default="ner_analysis_output")
+    parser.add_argument("--outdir", type=str, default="head-tail_analysis_output")
     parser.add_argument(
         "--bucket-method", choices=["cumulative_mass", "entity_rank", "frequency_threshold"],
         default="frequency_threshold",
